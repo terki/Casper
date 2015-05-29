@@ -871,9 +871,8 @@ body.nav-opened .nav {
     letter-spacing: -1px;
     font-weight: 700;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: #fff;
+    color: #e5e5e5;
 }
-
 .page-description {
     margin: 0;
     font-size: 2rem;
@@ -1857,6 +1856,7 @@ body:not(.post-template) .post-title {
 
     .page-title {
         font-size: 3rem;
+        font-color: #e5e5e5;
     }
 
     .post-excerpt p {
