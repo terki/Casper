@@ -21,7 +21,36 @@
 {{! The main content area on the homepage }}
 <main id="content" class="content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+{{#foreach posts}}
+  {{#has tag="Forside"}}
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <section class="post-footer">
+            {{#if featured}}
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_identifier = 'ghost-{{id}}';
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            {{/if}}
+        </section>
+    </article>
+  {{/has}}
+{{/foreach}}
 
 </main>
